@@ -10,12 +10,10 @@ import UIKit
 
 class MainTableViewController: UITableViewController, LogInProtocol {
 
+    var myArr: [[String: String]] = Array<[String: String]>()
+    
     @IBAction func openLogInScene(_ sender: Any) {
         
-        //if let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginview") as? LogInViewController {
-        //    loginVC.delegate = self
-        //    self.present(loginVC, animated: true, completion: nil)
-        //}
         
         guard let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginview") as? LogInViewController else {
             return
@@ -32,12 +30,24 @@ class MainTableViewController: UITableViewController, LogInProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // myArr.append("Yjj")
+        // myArr.append("Lar")
+        // myArr.append("Ycr")
+        
+        let dict1: [String: String] = ["name": "Yjj", "phone": "010-0000-0000"]
+        let dict2: [String: String] = ["name": "Lar", "phone": "010-1111-0000"]
+        let dict3: [String: String] = ["name": "Ycr", "phone": "010-0000-2222"]
+        
+        myArr.append(dict1)
+        myArr.append(dict2)
+        myArr.append(dict3)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,23 +59,24 @@ class MainTableViewController: UITableViewController, LogInProtocol {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myArr.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
+        let dict = myArr[indexPath.row]
+        cell.textLabel?.text = dict["name"]
+        cell.detailTextLabel?.text = dict["phone"]
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
