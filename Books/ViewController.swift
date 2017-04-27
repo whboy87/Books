@@ -42,7 +42,12 @@ class ViewController: UIViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true) {
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {
+                (Timer) -> Void in
+                alert.dismiss(animated: true, completion: nil)
+            })
+        }
     }
     
 }
