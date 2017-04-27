@@ -38,12 +38,51 @@
                                 <action selector="openLogInScene:" destination="uxD-ho-OcX" id="67b-xP-5bs"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mlE-mP-ycK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mlE-mP-ycK">
+                            <connections>
+                                <segue destination="Ghk-3z-HDD" kind="presentation" id="S0K-Ke-1fa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRL-7T-S6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="967" y="124"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="EHI-VI-TRG">
+            <objects>
+                <viewController id="Ghk-3z-HDD" customClass="PhotoViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0B4-Yb-ZSy"/>
+                        <viewControllerLayoutGuide type="bottom" id="G52-LG-oJk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="trS-bK-srg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPB-NI-WfK">
+                                <rect key="frame" x="43" y="46" width="288" height="278"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-pn-rTH">
+                                <rect key="frame" x="172" y="384" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="닫기"/>
+                                <connections>
+                                    <action selector="close:" destination="Ghk-3z-HDD" eventType="touchUpInside" id="8nz-uo-Tjf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="coverImageView" destination="cPB-NI-WfK" id="KBa-U8-yN7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6y-T0-IwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749.5999999999999" y="123.68815592203899"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="LEM-KJ-M3H">
