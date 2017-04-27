@@ -12,7 +12,7 @@ protocol LogInProtocol {
     func completedLogIn(name: String)
 }
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
 
     var delegate: LogInProtocol? = nil
     
@@ -37,6 +37,9 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
