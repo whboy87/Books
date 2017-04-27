@@ -12,7 +12,7 @@
         <!--Books-->
         <scene sceneID="KJx-8Q-xF8">
             <objects>
-                <tableViewController id="uxD-ho-OcX" sceneMemberID="viewController">
+                <tableViewController id="uxD-ho-OcX" customClass="MainTableViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iun-d3-i9Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" title="Books" id="AxO-gS-r3p">
                         <barButtonItem key="leftBarButtonItem" title="Log In" id="D30-4f-Fol">
                             <connections>
-                                <segue destination="WEk-Gb-PaB" kind="presentation" id="Hvw-2z-2jy"/>
+                                <action selector="openLogInScene:" destination="uxD-ho-OcX" id="67b-xP-5bs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mlE-mP-ycK"/>
@@ -48,7 +48,7 @@
         <!--Log In View Controller-->
         <scene sceneID="LEM-KJ-M3H">
             <objects>
-                <viewController id="WEk-Gb-PaB" customClass="LogInViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginview" id="WEk-Gb-PaB" customClass="LogInViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b35-CO-wak"/>
                         <viewControllerLayoutGuide type="bottom" id="Trf-hP-hiB"/>
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLi-GI-a46" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="124"/>
+            <point key="canvasLocation" x="966" y="-563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Bf-KZ-i3n">
