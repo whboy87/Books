@@ -11,6 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController, LogInProtocol {
 
     var myArr: [[String: String]] = Array<[String: String]>()
+    var userName: String? = nil
     
     @IBAction func openLogInScene(_ sender: Any) {
         
@@ -25,7 +26,7 @@ class MainTableViewController: UITableViewController, LogInProtocol {
     }
     
     func completedLogIn(name: String) {
-        print(name)
+        userName = name
     }
     
     override func viewDidLoad() {
@@ -37,10 +38,6 @@ class MainTableViewController: UITableViewController, LogInProtocol {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        // myArr.append("Yjj")
-        // myArr.append("Lar")
-        // myArr.append("Ycr")
-        
         let dict1: [String: String] = ["name": "Yjj", "phone": "010-0000-0000"]
         let dict2: [String: String] = ["name": "Lar", "phone": "010-1111-0000"]
         let dict3: [String: String] = ["name": "Ycr", "phone": "010-0000-2222"]
@@ -48,6 +45,30 @@ class MainTableViewController: UITableViewController, LogInProtocol {
         myArr.append(dict1)
         myArr.append(dict2)
         myArr.append(dict3)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let uName = userName {
+            let alert = UIAlertController(title: "Books.", message: "\(uName)님 환영합니다.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+            
+            //let cancelAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel) {
+            //    (action: UIAlertAction) -> () in
+            //    print(action.title!)
+            //    self.view.backgroundColor = UIColor.red
+            //}
+            
+            alert.addAction(okAction)
+            //alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true) {
+                Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {
+                    (Timer) -> Void in
+                    alert.dismiss(animated: true, completion: nil)
+                })
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
