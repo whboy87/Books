@@ -78,7 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-Gc-Pgo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-Gc-Pgo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cPB-NI-WfK">
@@ -154,6 +154,7 @@
                     <connections>
                         <outlet property="authorTextField" destination="m7e-22-ChS" id="xKw-ke-XhJ"/>
                         <outlet property="coverImageView" destination="cPB-NI-WfK" id="KBa-U8-yN7"/>
+                        <outlet property="scrollView" destination="Trn-Gc-Pgo" id="FFC-8t-DB7"/>
                         <outlet property="titleTextField" destination="chk-e1-UkN" id="jTs-Lq-hZ7"/>
                         <outlet property="urlTextField" destination="Hf6-Ec-L0V" id="evO-lc-Zb9"/>
                     </connections>

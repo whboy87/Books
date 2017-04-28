@@ -10,8 +10,8 @@ import UIKit
 
 class MainTableViewController: UITableViewController, LogInProtocol {
 
-    var myArr: [[String: String]] = Array<[String: String]>()
     var userName: String? = nil
+    var appdelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
     
     @IBAction func openLogInScene(_ sender: Any) {
         
@@ -37,14 +37,6 @@ class MainTableViewController: UITableViewController, LogInProtocol {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        let dict1: [String: String] = ["name": "Yjj", "phone": "010-0000-0000"]
-        let dict2: [String: String] = ["name": "Lar", "phone": "010-1111-0000"]
-        let dict3: [String: String] = ["name": "Ycr", "phone": "010-0000-2222"]
-        
-        myArr.append(dict1)
-        myArr.append(dict2)
-        myArr.append(dict3)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +61,8 @@ class MainTableViewController: UITableViewController, LogInProtocol {
                 })
             }
         }
+        
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,16 +79,24 @@ class MainTableViewController: UITableViewController, LogInProtocol {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myArr.count
+        if let books = appdelegate?.books {
+            return books.count
+        } else {
+            return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        let dict = myArr[indexPath.row]
-        cell.textLabel?.text = dict["name"]
-        cell.detailTextLabel?.text = dict["phone"]
+        guard let books = appdelegate?.books else {
+            return cell
+        }
+        
+        cell.textLabel?.text = books[indexPath.row].title
+        cell.detailTextLabel?.text = books[indexPath.row].author
+        cell.imageView?.image = books[indexPath.row].coverImage
         
         return cell
     }
