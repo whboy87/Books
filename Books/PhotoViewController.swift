@@ -8,11 +8,36 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    var activeTextField: UITextField? = nil
+    
     @IBOutlet var coverImageView: UIImageView!
+    @IBOutlet var titleTextField: UITextField!
+    @IBOutlet var authorTextField: UITextField!
+    @IBOutlet var urlTextField: UITextField!
+
+    //TextField
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        return true
+    }
     
     @IBAction func close(_ sender: Any) {
+        
+        if let title = titleTextField.text {
+                let book: Book = Book(title: title, author: authorTextField.text, coverImage: coverImageView.image, url: urlTextField.text)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     

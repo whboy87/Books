@@ -15,6 +15,7 @@
 		251069E81EB1AF3300FFADA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251069E71EB1AF3300FFADA8 /* ViewController.swift */; };
 		251069EA1EB1B04E00FFADA8 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251069E91EB1B04E00FFADA8 /* MainTableViewController.swift */; };
 		251069EC1EB1BE9900FFADA8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251069EB1EB1BE9900FFADA8 /* PhotoViewController.swift */; };
+		251069EE1EB2DA4800FFADA8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251069ED1EB2DA4800FFADA8 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		251069E71EB1AF3300FFADA8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		251069E91EB1B04E00FFADA8 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		251069EB1EB1BE9900FFADA8 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		251069ED1EB2DA4800FFADA8 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				251069DA1EB18CD300FFADA8 /* Assets.xcassets */,
 				251069DC1EB18CD300FFADA8 /* LaunchScreen.storyboard */,
 				251069DF1EB18CD300FFADA8 /* Info.plist */,
+				251069ED1EB2DA4800FFADA8 /* Book.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				251069EA1EB1B04E00FFADA8 /* MainTableViewController.swift in Sources */,
 				251069E81EB1AF3300FFADA8 /* ViewController.swift in Sources */,
+				251069EE1EB2DA4800FFADA8 /* Book.swift in Sources */,
 				251069E61EB1ADD900FFADA8 /* LogInViewController.swift in Sources */,
 				251069D41EB18CD300FFADA8 /* AppDelegate.swift in Sources */,
 				251069EC1EB1BE9900FFADA8 /* PhotoViewController.swift in Sources */,
